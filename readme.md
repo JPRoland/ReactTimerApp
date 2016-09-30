@@ -1,1 +1,1 @@
-Boilerplate React App
+Timer app built with React.
