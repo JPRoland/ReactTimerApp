@@ -1,8 +1,9 @@
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
   entry: [
-    'script!jquery/dist/jquery.min.js',
+    'script!jquery/dist/jquery.js',
     'script!foundation-sites/dist/foundation.min.js',
     './app/app.jsx'
   ],
@@ -26,7 +27,8 @@ module.exports = {
       Nav: 'app/components/Nav.jsx',
       applicationStyles: 'app/styles/app.scss',
       Timer: 'app/components/Timer.jsx',
-      Countdown: 'app/components/Countdown.jsx'
+      Countdown: 'app/components/Countdown.jsx',
+      Clock: 'app/components/Clock.jsx'
     },
     extensions: ['', '.js', '.jsx']
   },
@@ -40,6 +42,11 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/
       }
+    ]
+  },
+  sassLoader: {
+    includePaths: [
+      path.resolve(__dirname, './node_modules/foundation-sites/scss')
     ]
   }
 };
